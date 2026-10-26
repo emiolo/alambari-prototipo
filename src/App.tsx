@@ -107,7 +107,7 @@ function App() {
   const meta = metadata[view]
   return <div className="app">
     <aside className={'sidebar ' + (menuOpen ? 'open' : '')}>
-      <div className="brand"><div className="brand-symbol">A</div><div><strong>Alambari</strong><span>Gestão Agropecuária</span></div><button className="close-menu" onClick={() => setMenuOpen(false)} aria-label="Fechar menu"><X /></button></div>
+      <div className="brand"><div className="brand-logo-wrap"><img className="brand-logo" src={import.meta.env.BASE_URL + 'alambari-logo.png'} alt="Alambari Agropecuária" /></div><div className="brand-copy"><strong>Alambari</strong><span>Gestão Agropecuária</span></div><button className="close-menu" onClick={() => setMenuOpen(false)} aria-label="Fechar menu"><X /></button></div>
       <nav>{navigation.map(section => <section className="nav-group" key={section.group}><p>{section.group}</p>{section.items.map(([id, Icon, label, badge]) => <button key={id} className={view === id ? 'nav active' : 'nav'} onClick={() => go(id)}><i><Icon /></i><span>{label}</span>{badge && <b>{badge}</b>}</button>)}</section>)}</nav>
       <footer><i />Sistema demonstrativo<small>Dados simulados · React + TypeScript</small></footer>
     </aside>
